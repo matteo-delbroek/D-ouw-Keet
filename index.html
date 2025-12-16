@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'Ouwe Keet | Proef de Rust & Beleving</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>D'Ouwe Keet</h1>
+            <p>Uw unieke ontsnapping: waar de natuur smaakt naar streekbier en natuurwijn.</p>
+            <a href="#over" class="button">Ontdek Onze Beleving</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="over" class="section about">
+            <div class="container">
+                <h2>Welkom in het Hart van de Natuur</h2>
+                <div class="about-content">
+                    <p>hier kan een zelf gescreven tekst over jullie.</p>
+                    <p class="signature-line">Bij D'Ouwe Keet proeft u de rust én de passie.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galerij" class="section gallery">
+            <div class="container">
+                <h2>Foto's</h2>
+                <div class="image-grid">
+                    
+                    <p>afbeelding 1</p>
+                    <p>afbeelding 2</p>
+                    <p>afbeelding 3</p>
+                    <p>afbeelding 4</p>
+                   <!-- <div class="image-item"><img src="/D'ouw Keet/image/unnamed (1).webp" alt="Sfeervolle binnenkant"></div>-->
+                    <!--<div class="image-item"><img src="/D'ouw Keet/image/unnamed (2).webp" alt="Terras aan het meer"></div>-->
+                   <!-- <div class="image-item"><img src="/D'ouw Keet/image/unnamed (3).webp" alt="Streekbier en hapjes"></div>-->
+                   <!-- <div class="image-item"><img src="/D'ouw Keet/image/unnamed.webp" alt="Zonsondergang over het meer"></div>-->
+                </div>
+                <p class="caption"></p>
+            </div>
+        </section>
+
+        <section id="openingstijden" class="section hours">
+            <div class="container">
+                <h2>Openingstijden</h2>
+                <p class="call-to-action">Tijd voor een drankje? Wij ontvangen u graag op:</p>
+                <table id="hours-table">
+                    <thead>
+                        <tr>
+                            <th>Dag</th>
+                            <th>Tijden</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-day="Maandag"><td>Maandag</td><td>Gesloten</td></tr>
+                        <tr data-day="Dinsdag"><td>Dinsdag</td><td>Gesloten</td></tr>
+                        <tr data-day="Woensdag"><td>Woensdag</td><td>Gesloten</td></tr>
+                        <tr data-day="Donderdag"><td>Donderdag</td><td>Gesloten</td></tr>
+                        <tr data-day="Vrijdag"><td>Vrijdag</td><td>17:00 – 00:00</td></tr>
+                        <tr data-day="Zaterdag"><td>Zaterdag</td><td>11:00 – 00:00</td></tr>
+                        <tr data-day="Zondag"><td>Zondag</td><td>11:00 – 00:00</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2>Contact & Locatie</h2>
+                <div class="contact-info">
+                    <p>Wilt u een plek reserveren of heeft u een vraag over ons aanbod?</p>
+                    <p>Bel ons: <a href="tel:0477560704">0477 56 07 04</a></p>
+                    <p>U kan ook altijd naar onze facebook gaan: <a href="https://www.facebook.com/p/Douw-keet-100086223712509/?locale=nl_BE">facebook</a></p>
+                    <p>U vindt ons hier:</p>
+                </div>
+                <div class="map-placeholder">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2509.078925624668!2d5.416232300000001!3d51.033163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c127f6f2cfc873%3A0x28df09c6bdd789bd!2sD&#39;ouw%20Keet!5e0!3m2!1snl!2sbe!4v1765898391663!5m2!1snl!2sbe" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><p>© 2025 D'Ouwe Keet – Voorbeeldwebsite, kan aangepast worden aan jullie stijl.</p>
+</p>
+    </footer>
+
+    <script>
+        // JavaScript om de huidige dag te markeren in de openingstijden-tabel
+        const days = ["Zondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag"];
+        const todayIndex = new Date().getDay(); // 0 = Zondag, 1 = Maandag, etc.
+        const todayName = days[todayIndex];
+
+        // Zoek de rij met de corresponderende dag
+        const table = document.getElementById('hours-table');
+        const rows = table.querySelectorAll('tbody tr');
+
+        rows.forEach(row => {
+            if (row.getAttribute('data-day') === todayName) {
+                row.classList.add('today'); // Voeg CSS-klasse toe
+            }
+        });
+    </script>
+</body>
+</html>
